@@ -35,12 +35,8 @@
 <!-- ABOUT THE PROJECT -->
 ## Introduction
 
-This project is built under microsoft engage mentorship program 2022.This Web app consists of three demonstrations of facial recognition
-* Login Security
-* Finding missing people
-* Tracking Attendance
+This project is built under lambda hackathon.
 
-This Project is based upon computer vision applications and pre-built machine learning models.
 
 
 <p align="right">(<a href="#top">back to top</a>)</p>
@@ -68,11 +64,11 @@ This project is built using.
 
 - Clone this repository
 ```sh
-  git clone https://github.com/ArunSiddardha/FaceRecognition_Engage2022.git
+  git clone https://github.com/ArunSiddardha/Lambda-Hackathon.git
   ```
 - Change the working directory
 ```sh
-  cd FaceRecognition_Engage2022
+  cd Lambda-Hackathon
   ```
 - Create a python virtual environment in the working directory
 
@@ -91,22 +87,14 @@ This project is built using.
     pip3 install -r requirements.txt
 ```
 
-<<<<<<< HEAD
-- Run the flask server
-```sh
-    python app.py 
-```
 
-=======
 - Run the flask server (using anyone of the command)
 ```sh
     python app.py  or flask run 
 ```
-       
->>>>>>> 014b5d6a7480feecdc4bce48cedc64b41c44b6e0
 - Run the app on the browser
 ```sh
-    http://localhost:5000/ or whatever port it gives 
+    http://localhost:8000/ or whatever port it gives 
 ```
 
 
@@ -114,10 +102,6 @@ This project is built using.
 
 
 ## Key Features
-
-### Login and Register
-- Registration using users face & username
-- Login using users face & usernmae
 
 ### Tracking Attendance
 - Course Registration
@@ -130,15 +114,14 @@ This project is built using.
     - Teachers can check the class strength and the students attendance using this portal
 ## Images of the Web Application
 ### Home Page
-<img src="ourapp/static/ReadmeImages/home1.png" alt="Logo">
-<img src="ourapp/static/ReadmeImages/home2.png" alt="Logo">
+
+<img src="ourapp/static/ReadmeImages/Attendance1.png" alt="Logo">
+<img src="ourapp/static/ReadmeImages/Attendance2.png" alt="Logo">
 <br>
 <br>
 
 ### Class Attendance Portal
 
-<img src="ourapp/static/ReadmeImages/Attendance1.png" alt="Logo">
-<img src="ourapp/static/ReadmeImages/Attendance2.png" alt="Logo">
 
 - Class registration
 <img src="ourapp/static/ReadmeImages/class1.png" alt="Logo">
