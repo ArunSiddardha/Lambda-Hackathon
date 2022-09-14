@@ -25,7 +25,6 @@
     </li>
     <li>
       <a href="#key-features">Key Features</a>
-  
     </li>
   </ol>
 </details>
