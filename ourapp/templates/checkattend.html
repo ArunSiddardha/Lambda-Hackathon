@@ -1,0 +1,133 @@
+{% extends "Classroom.html" %}
+{% block classroom %}
+<link rel="stylesheet" href="/static/css/classattendance.css">
+
+<!-- Page For Checking the Attendance -->
+
+<div class="container m-2">
+
+    <canvas id="myChart" width="400" height="200"></canvas>
+
+    <div class="tabs">
+        <div class="tab-2">
+            <label for="tab2-1">Class Attendance</label>
+            <input id="tab2-1" name="tabs-two" type="radio" checked="checked">
+            <div>
+                <div class="m-4"><b class="">Search the table for Date,Course, CourseCode:
+                        <input id="gfg" type="text" placeholder="Search here">
+                    </b></div>
+                <div class="table-responsive">
+                    <table class="table container">
+                        <thead>
+                            <tr>
+                                <th scope="col">Date</th>
+                                <th scope="col">Course</th>
+                                <th scope="col">Strength</th>
+                            </tr>
+                        </thead>
+                        <tbody id="geeks">
+                            {% for pos in classattendance %}
+                            <tr>
+                                <td>{{ pos.Date }}</td>
+                                <td>{{ pos.CourseCode }}</td>
+                                <td>{{ pos.Strength }}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+
+
+                </div>
+            </div>
+        </div>
+        <div class="tab-2">
+            <label for="tab2-2">Student Attendance</label>
+            <input id="tab2-2" name="tabs-two" type="radio">
+            <div>
+                <div class="m-4"><b class="">Search the table for Date,Course, Strength:
+                        <input id="inp" type="text" placeholder="Search here">
+                    </b>
+                </div>
+                <div class="table-responsive-md">
+                    <table class="table table-responsive container">
+                        <thead>
+                            <tr>
+                                <th scope="col">Date</th>
+                                <th scope="col">RollNo</th>
+                                <th scope="col">CourseCode</th>
+                            </tr>
+                        </thead>
+                        <tbody id="attend">
+                            {% for pos in attendance %}
+                            <tr>
+                                <td>{{ pos.Date }}</td>
+                                <td>{{ pos.RollNo }}</td>
+                                <td>{{ pos.CourseCode }}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+      const ctx = document.getElementById('myChart').getContext('2d');
+        const myChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels :["1 Aug","2 Aug","3 Aug","4 Aug","5 Aug","6 Aug","7 Aug","8 Aug","9 Aug","10 Aug","11 Aug","12 Aug","13 Aug","14 Aug","15 Aug","16 Aug","17 Aug","18 Aug","19 Aug","20 Aug","21 Aug","22 Aug","23 Aug","24 Aug","25 Aug","26 Aug","27 Aug","28 Aug","29 Aug","30 Aug","31 Aug"],
+                datasets: [{
+                    label: '# of students',
+                    data: [
+    98, 76, 60, 62,
+    65, 50, 45, 98,
+    50, 60, 65, 98, 98, 76, 60, 62,
+    65, 50, 45, 98,
+    50, 60, 65, 98,65, 50, 45, 98,
+    50, 60, 65, 98
+],
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(153, 102, 255, 0.2)',
+                        'rgba(255, 159, 64, 0.2)'
+                    ],
+                    borderColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(255, 159, 64, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+                
+        $(document).ready(function () {
+            $("#gfg").on("keyup", function () {
+                var value = $(this).val().toLowerCase();
+                $("#geeks tr").filter(function () {
+                    $(this).toggle($(this).text()
+                        .toLowerCase().indexOf(value) > -1)
+                });
+            });
+        });
+    </script>
+</div>
+
+
+
+{% endblock %}

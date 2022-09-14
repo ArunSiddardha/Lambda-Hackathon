@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+{% block content %}
+<link rel="stylesheet" href="/static/css/home.css">
+
+
+<!-- The Home Page -->
+
+
+<div class="content">
+<div class="textwelcome">Welcome to My Face Recognition Demostraion {% if(current_user.username ) %} {{current_user.username}} {% endif %}!</div>
+<p class="para">Hello there, everyone! As part of the Engage Mentorship Program 2022, this webApp was created. We can see applications of <strong>facial recognition</strong> in this project. There are three Face Recognition examples in this webApp, as listed below.</p>
+</div>
+<div class="cards">
+    <div class="box">
+        <h1 class="event">
+            Class Attendance
+        </h1>
+        <p class="participants">
+            Here I've demonstrated the face recognition technology in tracking attendance 
+        </p>
+        <br>
+        <a href="/classattendance"><div class="join join-btn joinbtn" >Class Attendance</div></a>
+        <br>
+    </div>
+</div>
+{% endblock %}
